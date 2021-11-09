@@ -1,6 +1,6 @@
 import axios from "axios"; //import axios
 import { useRegisterAxios } from "./Interceptors/Interceptors";
-import { onRejectStatu422, onRejectStatus401 } from './Handlers/Handlers';
+import { onRejectStatus422, onRejectStatus401 } from './Handlers/Handlers';
 
 const AxiosInstance = axios.create({
     baseURL: "", //sua base url
@@ -24,7 +24,7 @@ const AxiosInstance = axios.create({
  * 
 */
 useRegisterAxios(AxiosInstance, [
-    {type: "response", useOrReject: "use", handleInterceptor: onRejectStatu422},
+    {type: "response", useOrReject: "use", handleInterceptor: onRejectStatus422},
     {type: "response", useOrReject: "use", handleInterceptor: onRejectStatus401}
 ]);
 

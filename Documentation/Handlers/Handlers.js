@@ -1,4 +1,4 @@
-export const onRejectStatu422 = (err) => {
+export const onRejectStatus422 = (err) => {
     let response = err.response;
     
     if (422 === response.status) {
